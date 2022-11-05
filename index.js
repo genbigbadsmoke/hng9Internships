@@ -4,6 +4,16 @@ const bodyParser = require('body-parser');
 const app = express();
 app.use(express.json())
 
+
+// app.get('/', (req, res) => {
+//   res.send({
+//       'slackusername': '@kloud',
+//       'backend': true,
+//       'age': 22,
+//       'bio': 'my name is kloud, a web developer with interests in the backend and web3'
+//   })
+// })
+
 app.post('/', (req, res) => {
   const body = req.body ?? {};
   const x = parseInt(body.x ?? 0);
@@ -35,5 +45,5 @@ app.post('/', (req, res) => {
 })
 
 app.listen(process.env.PORT, () => {
-  console.log('Server running on port 8721');
+  console.log('Server running');
 });
